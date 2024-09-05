@@ -1,0 +1,79 @@
+# Configuration for GitHub Issue and PR templates
+
+# Enforce the use of issue templates and disable blank issues
+issues:
+  enabled: true
+  blank_issues_enabled: false
+  contact_links:
+    - name: "Bug Report"
+      url: "/.github/ISSUE_TEMPLATE/bug_report.md"
+      about: "Report bugs or issues with mods"
+    - name: "Feature Request"
+      url: "/.github/ISSUE_TEMPLATE/feature_request.md"
+      about: "Request a new feature or suggest improvements"
+
+# Automatically assign labels to issues based on the templates used
+issue_template:
+  - name: "Bug report"
+    about: "Report a bug in the mod"
+    labels: ["bug", "needs-investigation"]
+  - name: "Feature request"
+    about: "Suggest a new feature for the mod"
+    labels: ["enhancement", "needs-review"]
+
+# Enforce pull request templates and automatically add labels
+pulls:
+  enabled: true
+  default_labels:
+    - "needs-review"
+    - "needs-testing"
+
+# Automatically assign reviewers to PRs (update with your team/usernames)
+reviewers:
+  enabled: true
+  reviewers:
+    - MisterRee
+
+# Automatically add labels to issues and PRs that are stale
+stale:
+  days_until_stale: 30  # Mark as stale after 30 days of no activity
+  days_until_close: 7    # Close the issue 7 days after being marked stale
+  exempt_labels:
+    - "pinned"
+    - "enhancement"
+  stale_label: "stale"
+  close_comment: "This issue has been automatically closed due to inactivity. Feel free to reopen if this is still an issue!"
+
+# Enable Discussions for community engagement
+discussions:
+  enabled: true
+  categories:
+    - name: "General"
+      description: "General discussion about the mods."
+    - name: "Feature Requests"
+      description: "Discuss and request new features for the mods."
+    - name: "Bug Reports"
+      description: "Report bugs or issues with mods."
+
+# Automatically close pull requests that are not updated
+pulls_stale:
+  days_until_stale: 30
+  stale_label: "stale"
+  exempt_labels:
+    - "pinned"
+  close_comment: "This pull request has been automatically closed due to inactivity. Feel free to reopen if this is still relevant!"
+
+# Repository description and metadata
+repository:
+  visibility: public
+  description: "Collection of Space Engineers mods"
+  topics:
+    - "space engineers"
+    - "mods"
+    - "open-source"
+
+# Default labels for new issues and PRs
+labels:
+  bug: "Something isn't working."
+  enhancement: "This issue or pull request suggests a new feature or enhancement."
+  stale: "This issue or pull request has had no recent activity and is marked as stale."
